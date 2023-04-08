@@ -1,7 +1,11 @@
 import React from 'react'
 import arrow from "../../assets/images/right-arrow.png";
 import hero from "../../assets/images/hero.png"
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+import About from '../About/About';
+import Videos from '../Videos/Videos';
+import FeedBack from '../FeedBack/FeedBack';
+import VideoSlider from '../VideosSlider/VideoSlider';
 
 function Home() {
     return (
@@ -33,7 +37,11 @@ function Home() {
                     </div>
                 </div>
             </section>
-            
+            {/* <Outlet/> */}
+            <About/>
+            <Videos/>
+            <VideoSlider/>
+            <FeedBack/>
         </React.Fragment>
     )
 }

@@ -2,9 +2,11 @@ import React from 'react'
 import kids from "../../assets/images/kids.jpg"
 import arrow from "../../assets/images/right-arrow.png"
 import { Link } from 'react-router-dom'
+import Home from '../Home/Home'
 function About() {
     return (
         <React.Fragment>
+        <Home/>
             <section className="about_section layout_padding">
                 <div className="container">
                     <h2 className="main-heading ">

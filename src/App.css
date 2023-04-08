@@ -107,8 +107,8 @@ a:focus {
 }
 
 .top_container {
-  height: 95vh;
-  position: relative;
+  height: 10vh;
+  /* position: relative; */
 }
 
 .top_container::before {
@@ -129,11 +129,11 @@ a:focus {
 }
 
 .top_container.sub_pages {
-  height: 35vh;
+  /* height: 35vh; */
 }
 
 .top_container.sub_page {
-  height: auto;
+  /* height: auto; */
 }
 
 .navbar-brand img {

@@ -48,7 +48,7 @@ function Header() {
                         </Navbar>
                     </div>
                 </header>
-                <Home />
+                {/* <Home /> */}
                
             </div>
             {/* <!-- end header section --> */}
