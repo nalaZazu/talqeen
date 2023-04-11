@@ -1,5 +1,6 @@
 import React from 'react'
-import student from "../../assets/images/student.png"
+import student from "../../assets/images/student.png";
+
 function FeedBack() {
     return (
         <React.Fragment>

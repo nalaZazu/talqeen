@@ -1,95 +1,75 @@
-import React, { useState } from 'react'
-
-import student from "../../assets/images/student.png"
-import Iframe from 'react-iframe'
-import YouTubePlayer from 'react-youtube'
-
-import { detailsArray } from './detailsArray'
+import React, { useEffect, useRef, useState } from 'react'
+import YouTube from 'react-youtube'
+let videoIdList = ["AOMpxsiUg2Q", "XM-HJT8_esM"];
+// let array = [];
 export default function Detailspage() {
-    const details = detailsArray;
-    let [youtube, setYoutube] = useState('');
-    let video = [
-        {
-            videoID: 'zZ1inK94DqU',
-            title: "Lorem ipsum dolor sit amet "
-        },
-        
-    ]
-    // const option = {
-    //     height: '560',
-    //     width: '315',
-    //     playerVars: {
-    //         // https://developers.google.com/youtube/player_parameters
-    //         autoplay: 1,
-    //     },
-    // };
+    const [videoId, setVideoId] = useState(videoIdList[0]);
+    let [update, setUpdate] = useState([])
+    const [i, setIndex] = useState(0);
 
+    const opts = {
+        height: '390',
+        width: '640',
+        playerVars: {
+            autoplay: 1,
+        },
+    };
+    useEffect(() => {
+        setVideoId(videoIdList[i]);
+    }, [i]);
+
+    const onEnd = () => {
+        // i++;
+        // setVideoId(videoIdList[i]);
+        setIndex(i => i + 1);
+        for (let item of videoIdList) {
+            const newArray = [];
+            if (item.find === newArray) {
+                newArray.push(item);
+            }
+            setUpdate(newArray)
+
+        }
+    }
     return (
         <React.Fragment>
-            <section className='bg-light'>
+            <section className=' layout_padding' >
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-7   mt-3 ">
+                        <div className="col-lg-7 ">
                             <h2 className="main-heading  ">
-                                Video Title
+                                {/* Video Title */}
                             </h2>
-                            {/* <YouTubePlayer videoId={video}  opts={option.width} />
+                            <YouTube videoId={videoId}
+                                opts={opts} onEnd={onEnd} />
+                        </div>
+                        <div className="col-lg-5 mt-5">
                             {
-                                video.map((item) => {
+                                update.map((item) => {
                                     return (
-                                        <div onClick={() => {
-                                            setYoutube
-                                                (item.videoID)
-                                        }} >
-
+                                        <div>
+                                            <img className="w-25" src={"http://img.youtube.com/vi/" + item.videoId + "/0.jpg"} />                                        </div>
+                                    )
+                                })
+                            }
+                            {/* {
+                                videoId.map((item) => {
+                                    return (
+                                        <div className="card d-flex m-2" style={{ flexDirection: "row" }} onClick={() => {
+                                            setVideoId(item.videoID)
+                                        }}>
+                                            <img className="w-25" src={"http://img.youtube.com/vi/" + item.videoID + "/0.jpg"} />
+                                            <p className='p-2'>{item.videotitle}</p>
                                         </div>
                                     )
                                 })
                             } */}
-                            {
-                                video.map((item) => {
-                                    return (
-                                        <Iframe src={`https://www.youtube.com/embed/${item.videoID}`} allowfullscreen
-                                            width="560" height="315"
-                                            // width="675px"
-                                            // height="320px"
-                                            id=""
-                                            className="mb-3"
-                                            display="block"
-                                            position="relative"
-
-                                        />
-                                    )
-                                })
-                            }
-
-
-                        </div>
-                        <div className="col-lg-5 mt-5">
-
-                            {
-                                video.map((item) => {
-                                    const { title, img } = item
-                                    return (
-                                        <div className="card m-2">
-                                            <div class="card-body d-flex">
-                                                {/* <img src={img} alt="student" className="w-75" /> */}
-                                                <img src={"http://img.youtube.com/vi/" + item.videoID + "/0.jpg"} className='w-25' />
-
-                                                <span className='title ms-3'>{title}</span>
-
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            }
-
 
                         </div>
                     </div>
                 </div>
 
-            </section>
-        </React.Fragment>
+            </section >
+        </React.Fragment >
     )
 }

@@ -1,18 +1,17 @@
 import React from 'react'
 import { videoArray } from './videoArray'
 import arrow from "../../assets/images/right-arrow.png"
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 function Videos() {
     let array = videoArray;
     return (
         <React.Fragment>
-
-            <section className="teacher_section layout_padding-bottom">
+            <section className="teacher_section layout_padding ">
                 <div className="container">
                     <h2 className="main-heading ">
                         Our Teachers
                     </h2>
-                    <p className="text-center">
+                    <p className="text-center video_para">
                         Ipsum available, but the majority h
                     </p>
                     <div className="teacher_container layout_padding2">
@@ -21,10 +20,13 @@ function Videos() {
                                 array.map((item) => {
                                     return (
                                         <div className="card ">
-                                            <img className="card-img-top" src={item.img} alt="Card image cap" />
-                                            <div className="card-body">
-                                                <h5 className="card-title">{item.title}</h5>
-                                            </div>
+                                            <Link to={`/videoSingle/${item.title}`} className='text-decoration-none'>
+
+                                                <img className="card-img-top" src={item.img} alt="Card image cap" />
+                                                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                </div>
+                                            </Link>
                                         </div>
                                     )
                                 })
@@ -33,7 +35,7 @@ function Videos() {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center mt-3">
-                        <Link to="/single" className="call_to-btn  ">
+                        <Link to="/video" className="call_to-btn  ">
                             <span>
                                 See More
                             </span>
@@ -42,7 +44,7 @@ function Videos() {
                     </div>
                 </div>
             </section>
-            
+
         </React.Fragment>
     )
 }

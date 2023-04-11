@@ -1,13 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from "../assets/images/logo.png"
-import Home from '../Pages/Home/Home'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 function Header() {
     return (
         <React.Fragment>
-            <div className="top_container">
+            <div className="top_container sub_pages">
                 {/*  header section strats  */}
                 <header className="header_section">
                     <div className="container">
@@ -49,7 +48,7 @@ function Header() {
                     </div>
                 </header>
                 {/* <Home /> */}
-               
+
             </div>
             {/* <!-- end header section --> */}
 

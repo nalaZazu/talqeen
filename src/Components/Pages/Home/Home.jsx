@@ -1,7 +1,7 @@
 import React from 'react'
 import arrow from "../../assets/images/right-arrow.png";
 import hero from "../../assets/images/hero.png"
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import About from '../About/About';
 import Videos from '../Videos/Videos';
 import FeedBack from '../FeedBack/FeedBack';
@@ -22,7 +22,7 @@ function Home() {
                             some form, by injected humour, or randomised
                         </p>
                         <div className="hero_btn-continer">
-                            <Link to="/" className="call_to-btn btn_white-border">
+                            <Link to="/contact" className="call_to-btn btn_white-border">
                                 <span>
                                     Contact
                                 </span>
@@ -37,11 +37,10 @@ function Home() {
                     </div>
                 </div>
             </section>
-            {/* <Outlet/> */}
-            <About/>
-            <Videos/>
-            <VideoSlider/>
-            <FeedBack/>
+            <About />
+            <Videos />
+            <VideoSlider />
+            <FeedBack />
         </React.Fragment>
     )
 }

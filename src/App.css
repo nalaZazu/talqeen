@@ -5,7 +5,9 @@ body {
 }
 
 .layout_padding {
-  padding: 75px 0;
+  /* padding: 75px 0; */
+  padding: 90px 0 75px 0;
+
 }
 
 .layout_padding2 {
@@ -129,11 +131,11 @@ a:focus {
 }
 
 .top_container.sub_pages {
-  /* height: 35vh; */
+  height: 6vh;
 }
 
 .top_container.sub_page {
-  /* height: auto; */
+  height: auto;
 }
 
 .navbar-brand img {
@@ -210,6 +212,7 @@ a:focus {
 .hero_detail-box p {
   margin-top: 20px;
   margin-bottom: 35px;
+  color: #082465;
 }
 
 
@@ -502,18 +505,23 @@ h4 {
 
 /* end footer section*/
 @media screen and (max-width: 768px) {
+
   .about_section {
     display: none;
     visibility: hidden;
   }
+  .main-heading {
+    margin: 50px 0 0 0;
+    color: #fec913;
+  }
+  .video_para  {
+    color: #fdfdfe;
+  }
 }
-
 /* responsive css */
 @media (max-width: 1120px) {}
 
 @media (max-width: 992px) {
-
-
   .top_container {
     height: auto;
   }
@@ -527,7 +535,6 @@ h4 {
   }
 
   .client_box-container {
-
     width: 90%;
 
   }
@@ -587,14 +594,9 @@ h4 {
 }
 
 @media (max-width: 768px) {
-
-
   .hero_detail-box {
     text-align: center;
   }
-
-
-
 }
 
 @media (max-width: 576px) {
@@ -630,9 +632,7 @@ h4 {
 
 @media (max-width: 480px) {
   .vehicle_img-box {
-
     width: 100%;
-
   }
 
   .admission_container {
